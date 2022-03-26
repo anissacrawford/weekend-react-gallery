@@ -17,7 +17,7 @@ function App() {
 
     // gets gallery data from array
     const getList = () => {
-      console.log('in GET');
+      // console.log('in GET');
 
       axios.get('/gallery').then(response => {
         setGalleryList(response.data);
@@ -31,7 +31,7 @@ function App() {
       <div className="App">
 
         <header className="App-header">
-          <h1 className="App-title">Gallery of My Life</h1>
+          <h1 className="App-title">Gallery of Anissa's Life</h1>
         </header>
 
         <GalleryList

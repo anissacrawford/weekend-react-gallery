@@ -18,11 +18,11 @@ function GalleryItem({listItem, getList}){
  
     // put route to handle likes
     const handleLike = (id) => {
-        console.log('in PUT');
+        // console.log('in PUT');
         
         axios.put(`/gallery/like/${id}`)
         .then(response => {
-          console.log('liked!', response.data);
+        //   console.log('liked!', response.data);
           getList();
         }).catch(err => {
           console.log(err);
@@ -37,7 +37,7 @@ function GalleryItem({listItem, getList}){
             <div onClick={() => setAddCaption(!addCaption)}>
                 {addCaption ? <img className="image" src={listItem.path}/> :
                 <div>
-                <p>{listItem.description}</p>
+                <div className="caption">{listItem.description}</div>
                 </div>
                 }
             </div>

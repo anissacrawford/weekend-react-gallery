@@ -5,7 +5,6 @@ function GalleryList ({galleryList, updateLike, getList}) {
     // loops through gallery list and renders items on the dom 
     return (
         <>
-        <p>Gallery goes here</p>
         <div className="mainDiv">
         {galleryList.map(listItem => (
             <GalleryItem

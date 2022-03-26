@@ -34,3 +34,10 @@
   flex-wrap: wrap;
 }
 
+.caption {
+  height: 400px;
+  width: 500px;
+  border: 2px solid black;
+
+}
+
