@@ -16,5 +16,21 @@
 .image {
     height: 400px;
     width: 500px;
+    border: 2px solid black;
+}
+
+.imageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin: 5px;
+}
+
+.mainDiv{
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 

@@ -7,12 +7,15 @@ import GalleryList from "../GalleryList/GalleryList";
 
 function App() {
 
+    // state variable for gallery list 
     const [galleryList, setGalleryList] = useState([])
     
+    // runs get on ready
     useEffect(() => {
       getList()
     }, [] )
 
+    // gets gallery data from array
     const getList = () => {
       console.log('in GET');
 
@@ -23,18 +26,7 @@ function App() {
       })
     }
 
-    // const handleLike = () => {
-    //   console.log('in PUT');
-      
-    //   axios.put(`/gallery/like/${id}`)
-    //   .then(response => {
-    //     console.log('liked!', response);
-    //     getList();
-    //   }).catch(err => {
-    //     console.log(err);
-    //   })
-    // }
-
+    //adds header and gallery to dom 
     return (
       <div className="App">
 
@@ -44,6 +36,7 @@ function App() {
 
         <GalleryList
         galleryList={galleryList}
+        getList={getList}
         />
       </div>
     );

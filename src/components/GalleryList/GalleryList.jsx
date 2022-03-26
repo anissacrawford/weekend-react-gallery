@@ -1,37 +1,18 @@
-import axios from 'axios';
 import GalleryItem from '../GalleryItem/GalleryItem'
 
-function GalleryList ({galleryList, getList}) {
+function GalleryList ({galleryList, updateLike, getList}) {
 
-    const updateLike = (id) => {
-       return( 
-        <>
-            <button onClick={(event) => handleLike(id)}>LIKE</button> 
-        </>
-       )
-    }
-
-    const handleLike = (id) => {
-        console.log('in PUT');
-        
-        axios.put(`/gallery/like/${id}`)
-        .then(response => {
-          console.log('liked!', response);
-          getList();
-        }).catch(err => {
-          console.log(err);
-        })
-      }
-
+    // loops through gallery list and renders items on the dom 
     return (
         <>
         <p>Gallery goes here</p>
-        <div>
+        <div className="mainDiv">
         {galleryList.map(listItem => (
             <GalleryItem
             key={listItem.id}
             listItem = {listItem}
             updateLike={updateLike}
+            getList={getList}
             />
         ))}
         </div>
