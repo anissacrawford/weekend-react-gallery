@@ -1,13 +1,24 @@
 import axios from 'axios';
+import {useState} from 'react';
 
-function GalleryItem({listItem}){
+function GalleryItem({listItem, updateLike}){
+    const [addCaption, setAddCaption] = useState(true)
+
     return (
         <>
         <div>
-            <img className="image" src={listItem.path}/>
-            <p>{listItem.description}</p>
+            
+            <div onClick={() => setAddCaption(!addCaption)}>
+                {addCaption ? <img className="image" src={listItem.path}/> :
+                <div>
+                <p>{listItem.description}</p>
+                </div>
+                }
+            </div>
+
             <p>{listItem.like}</p>
-            <button>LIKE</button>
+            {updateLike(listItem.id)}
+            
         </div>
         </>
     )

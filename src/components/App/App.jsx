@@ -23,17 +23,17 @@ function App() {
       })
     }
 
-    const handleLike = () => {
-      console.log('in PUT');
+    // const handleLike = () => {
+    //   console.log('in PUT');
       
-      axios.put(`/gallery/like/${id}`)
-      .then(response => {
-        console.log('liked!', response);
-        getList();
-      }).catch(err => {
-        console.log(err);
-      })
-    }
+    //   axios.put(`/gallery/like/${id}`)
+    //   .then(response => {
+    //     console.log('liked!', response);
+    //     getList();
+    //   }).catch(err => {
+    //     console.log(err);
+    //   })
+    // }
 
     return (
       <div className="App">
